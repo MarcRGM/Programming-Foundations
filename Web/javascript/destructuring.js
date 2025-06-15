@@ -28,3 +28,18 @@ console.log(clone); // { name: 'Marc', age: 20, course: 'JavaScript' }
 const {name: userName2, ...restOfUser} = clone; // Destructuring with rest operator
 console.log(userName2); // Marc
 console.log(restOfUser); // { age: 20, course: 'JavaScript' }
+
+const post = {
+  id: 1,
+  title: "Hello World",
+  author: {
+    nickname: "Mac",
+    email: "marc@email.com"
+  }
+}
+
+const { title, author } = post;
+const { nickname } = author;
+console.log(`Post: ${title} by ${nickname}`); // backticks must be used for template literals
+// Output: Post: Hello World by Mac
+
