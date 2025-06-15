@@ -1,3 +1,4 @@
+// Spread operator
 const a = [1, 2, 3];
 const b = [...a, 4, 5]; // without the three dots, it would be // [[1, 2, 3], 4, 5]
 
