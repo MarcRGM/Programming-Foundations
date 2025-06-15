@@ -1,0 +1,52 @@
+/* styles.css */
+
+/* Reset some default browser styles */
+body, h1, p {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Set up the body as a flex container (column layout) */
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    color: #222;
+    min-height: 100vh;
+    display: flex;              /* Enable flexbox */
+    flex-direction: column;     /* Stack children vertically */
+}
+
+/* Header styles (top of the page) */
+header {
+    background: #4a90e2;
+    color: #fff;
+    padding: 1.5rem 1rem;
+    text-align: center;
+    /* No flex properties needed here, header stays at top */
+}
+
+/* Main content area (centered and flexible) */
+main {
+    flex: 1;                   /* Take up all available space between header and footer */
+    padding: 2rem 1rem;
+    background: #fff;
+    max-width: 700px;
+    margin: 2rem auto;         /* Center horizontally */
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    display: flex;             /* Enable flexbox inside main */
+    flex-direction: column;    /* Stack children vertically */
+    justify-content: center;   /* Center children vertically (if more content) */
+    align-items: center;       /* Center children horizontally */
+}
+
+/* Footer styles (bottom of the page) */
+footer {
+    background: #222;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.95rem;
+    /* Footer stays at the bottom due to flex layout in body */
+}
