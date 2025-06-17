@@ -48,5 +48,23 @@ form.onsubmit = function(e) {
         });
 };
 
+function deleteNote(id) {
+  // Ask the server to delete the note using its ID
+  fetch(`/api/notes/${id}`, { method: "DELETE" })
+    .then(() => loadNotes()); // Reload the list after deleting
+}
+
+function editNote(id, oldText) {
+  const newText = prompt("Edit note:", oldText); // Ask user for new note text
+
+  // If user types something different, update the note
+  if (newText && newText !== oldText) {
+    fetch(`/api/notes/${id}`, {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ text: newText })
+    }).then(() => loadNotes()); // Reload list with updated note
+  }
+}
 
 
