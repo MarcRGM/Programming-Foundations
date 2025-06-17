@@ -16,4 +16,18 @@ function LoadNotes() {
     })
 };
 
+function addNoteToUI(note) {
+  const li = document.createElement("li"); // Create a new <li> for the note
+
+  li.innerHTML = `
+    <span>${note.text}</span>
+    <div class="actions">
+      <button onclick="editNote(${note.id}, '${note.text}')">Edit</button>
+      <button onclick="deleteNote(${note.id})">Delete</button>
+    </div>
+  `;
+
+  notesList.appendChild(li); // Add the new note <li> to the <ul>
+}
+
 
