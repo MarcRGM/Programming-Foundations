@@ -46,7 +46,31 @@ app.post("/api/notes", (req, res) => { // Sets up a route to handle POST request
     [text] replaces the ? with the actual note content.
     function (err) is a callback that runs after the database query, handling any error and giving access to results like this.lastID.
     */
-    if (err) return res.status(500).json({ error: err.message }); // If there’s a database error, send a 500 Internal Server Error with details.
+    if (err) return res.status(500).json({ error: err.message }); // error
     res.json({ id: this.lastID, text }); // If successful, send back the new note's ID and text as a JSON response.
   });
+});
+
+// PUT
+app.put("/api/notes/:id", (req, res) => {
+  const { id } = req.params; // gets the ID from the URL (e.g., /api/notes/2)
+  const { text } = req.body; // gets the new text from the request
+  db.run("UPDATE notes SET text = ? WHERE id = ?", [text, id], (err) => { // SQL query updates the text of the note with the given id
+    if (err) return res.status(500).json({ error: err.message }); // If there's an error, send a 500 status with the error message.
+    res.sendStatus(200); // If successful, send a 200 OK status.
+  });
+});
+
+// DELETE
+app.delete("/api/notes/:id", (req, res) => {
+  const { id } = req.params; // gets the ID from the URL (e.g., /api/notes/3)
+  db.run("DELETE FROM notes WHERE id = ?", [id], (err) => { // SQL query deletes the note with the given id
+    if (err) return res.status(500).json({ error: err.message }); // error
+    res.sendStatus(200); // success
+  });
+});
+
+// Start the server
+app.listen(PORT, () => { // Starts the server and listens for requests on the specified port.
+  console.log(`Server running at http://localhost:${PORT}`); // Logs a message to the console when the server starts, indicating where it can be accessed.
 });
