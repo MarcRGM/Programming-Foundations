@@ -16,7 +16,7 @@ function LoadNotes() {
     })
 };
 
-function addNoteToUI(note) {
+function addNoteToGUI(note) {
   const li = document.createElement("li"); // Create a new <li> for the note
 
   li.innerHTML = `
