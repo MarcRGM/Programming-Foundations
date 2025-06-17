@@ -4,10 +4,10 @@ const input = document.getElementById('noteInput');
 const notesList = document.getElementById('notesList');
 
 // Load all existing notes from the server when the page loads
-window.onload = LoadNotes;
+window.onload = loadNotes;
 
 
-function LoadNotes() {
+function loadNotes() {
     fetch('/api/notes') // Fetches all notes from the server.
     .then(res => res.json()) // Converts the response to JSON.
     .then(data => {
@@ -29,5 +29,24 @@ function addNoteToGUI(note) {
 
   notesList.appendChild(li); // Add the new note <li> to the <ul>
 }
+
+form.onsubmit = function(e) {
+    e.preventDefault(); // Stop the page from reloading when the form is submitted
+
+    const text = input.value; // Get the value from the input box
+
+    // Send the note to the backend using POST
+    fetch("/api/notes", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ text }) // send the note text as JSON
+    })
+        .then(res => res.json())
+        .then(note => {
+            addNoteToGUI(note); // Add new note to the screen
+            input.value = ""; // Clear the input box
+        });
+};
+
 
 
