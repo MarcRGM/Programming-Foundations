@@ -13,7 +13,7 @@ const db = new sqlite3.Database('notes.db'); // Creates or opens a SQLite databa
 
 // uses ` to allow multi-line SQL queries
 db.run(`CREATE TABLE IF NOT EXISTS notes (
-  id INTEGER PRIMARY KEY AUTOINCREMENT, // id: Unique identifier for each note, automatically increments.
+  id INTEGER PRIMARY KEY AUTOINCREMENT, 
   text TEXT NOT NULL
 )`);
 
