@@ -22,8 +22,8 @@ function addNoteToGUI(note) {
   li.innerHTML = `
     <span>${note.text}</span>
     <div class="actions">
-      <button onclick="editNote(${note.id}, '${note.text}')">Edit</button>
-      <button onclick="deleteNote(${note.id})">Delete</button>
+      <button id="edit" class="liButtons" onclick="editNote(${note.id}, '${note.text}')">Edit</button>
+      <button id="delete" class="liButtons" onclick="deleteNote(${note.id})">Delete</button>
     </div>
   `;
 

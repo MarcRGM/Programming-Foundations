@@ -1,0 +1,101 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+    max-height:100vh;
+}
+
+h1 {
+    text-align: center;
+    background-color: #333446;
+    color: #EAEFEF;
+    font-size: 4rem;
+    padding: 15px;
+    margin: 0;
+}
+
+#noteForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: auto;
+    padding: 20px;
+    width: 40%;
+    height: 15vh;
+}
+
+#noteInput {
+    width: 100%;
+    height: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    border-width: 0;
+    box-shadow: 0 15px 38px rgba(0,0,0,0.30);
+}
+
+#noteInput:focus {
+    outline: none;
+}
+
+#addBtn {
+    width: 100px;
+    height: 30px;
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 15px 38px rgba(0,0,0,0.30);
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+#addBtn:hover {
+    transform: translateY(-3px);
+    background-color: #333446;
+    box-shadow: 0 19px 40px rgb(127, 140, 170, 0.8);
+    color: #fff;
+}
+
+#notesList {
+    width: 60%;
+    margin: auto;
+}
+
+li {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333446;
+}
+
+li::marker {
+    font-size: 30px;
+    color: #333446;
+}
+
+.liButtons {
+    width: 100px;
+    height: 30px;
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 15px 38px rgba(0,0,0,0.30);
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+#edit:hover {
+    transform: translateY(-2px);
+    background-color: #CAE8BD;
+    box-shadow: 0 19px 40px rgb(176, 219, 156, 0.8);
+    color: #fff;
+}
+
+#delete:hover {
+    transform: translateY(-2px);
+    background-color: #CD5656;
+    box-shadow: 0 19px 40px rgb(175, 62, 62, 0.8);
+    color: #fff;
+}
+
+
