@@ -1,0 +1,38 @@
+body {
+    margin: 0;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+button {
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 10px 15px;
+    outline: none;
+    color: #898AC4;
+    background-color: #C0C9EE;
+    border-radius: 5px;
+    border: 0px solid transparent;
+    border-bottom: 5px solid #898AC4;
+    transition: all 3s ease 0;
+    position: fixed;
+}
+
+button:active {
+    transform: translateY(3px);
+    border: 0px solid transparent;
+}
+
+#box {
+    display: none;
+}
+
+p {
+    font-size: 3rem;
+}
+
