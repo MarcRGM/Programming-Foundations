@@ -1,0 +1,25 @@
+body {
+    margin: 0;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+label {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+input[type="range"] {
+    width: 22%;
+}
+
+
+#emoji {
+    font-size: 3rem;
+    margin: 0;
+}
