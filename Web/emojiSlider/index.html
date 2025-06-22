@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Emoji Slider</title>
+  </head>
+  <body>
+    <label for="emoji-slider">Select your mood:</label>
+    <input
+      id="emoji-slider"
+      type="range"
+      min="0"
+      max="3"
+      value="1"
+      oninput="document.getElementById('emoji').innerHTML = ['🙁', '😐', '🙂', '😆'][this.value]"
+    />
+    <p id="emoji">😐</p>
+  </body>
+</html>
